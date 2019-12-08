@@ -44,7 +44,16 @@ $.getJSON("../static/data/" + city + "_pre.geojson", function(data){
     var rooms = L.geoJson(data,{
     pointToLayer: function(feature, latlng){
         var marker = L.marker(latlng, {icon: roomIcon});
-        marker.bindPopup(feature.properties.name + '<br/>' + feature.properties.price);
+        marker.bindPopup(
+            "<h3>" + feature.properties.name + "<a href='" + feature.properties.listing_url + "'> [link]</a></h3><br/>"
+            + "<strong>Property Type: </strong>" + feature.properties.property_type + "<br/>"
+            + "<strong>Room Type: </strong>" + feature.properties.room_type + "<br/>"
+            + "<strong>Price: </strong>" + feature.properties.price + " /night | <strong>Rating: </strong> " + feature.properties.review_scores_rating + "<br/>"
+            + feature.properties.accommodates + " accommodates | " + feature.properties.beds + " beds<br/>"
+            + feature.properties.bathrooms + " bathrooms | " + feature.properties.bedrooms + " bedrooms<br/>" 
+            + feature.properties.minimum_nights + " nights minimum | " + feature.properties.availability_365 + " days available/year<br/>"
+            + "<strong>Amenities: </strong>" + feature.properties.amenities.substring(1, feature.properties.amenities.length - 1)
+        )
         return marker;
     }
     });
