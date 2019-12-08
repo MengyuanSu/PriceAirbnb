@@ -1,0 +1,129 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+<link rel="stylesheet" href="{% static "css/style.css" %}">
+<div class="ui text container">
+    <div class="ui two column grid">
+        <div class="eight wide column">
+            <form method="post" action="{% url 'predictor' %}" class="ui inverted form" id="predict-form">
+                {% csrf_token %}
+                <div class="field">
+                    <label>Location</label>
+                    <div class="two fields">
+                        <div class="field">
+                            <select class="ui dropdown">
+                                <option value="">City</option>
+                                <option value="0">NYC</option>
+                                <option value="1">London</option>
+                                <option value="2">Beijing</option>
+                                <option value="3">Paris</option>
+                                <option value="4">Tokyo</option>
+                            </select>
+                        </div>
+                        <div class="field">
+                            <div class="ui left icon input">
+                                <input type="text" name="zip_code" placeholder="Zip code" required/>
+                                <i class="location arrow icon"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="three fields">
+                    <div class="field">
+                        <label>Property type</label>
+                        <select class="ui dropdown">
+                            <option value="">Gender</option>
+                            <option value="1">Male</option>
+                            <option value="0">Female</option>
+                        </select>
+                    </div>
+                    <div class="field">
+                        <label>Room type</label>
+                        <select class="ui dropdown">
+                            <option value="">Gender</option>
+                            <option value="1">Male</option>
+                            <option value="0">Female</option>
+                        </select>
+                    </div>
+                    <div class="field">
+                        <label>Bed type</label>
+                        <select class="ui dropdown">
+                            <option value="">Gender</option>
+                            <option value="1">Male</option>
+                            <option value="0">Female</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="four fields">
+                    <div class="field">
+                        <label>Minimum Nights</label>
+                        <div class="ui left icon input">
+                            <input type="number" name="start_date" placeholder="DD/MM/YYYY" required/>
+                            <i class="moon icon"></i>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label>Bedrooms</label>
+                        <div class="ui left icon input">
+                            <input type="number" name="start_date" placeholder="DD/MM/YYYY" required/>
+                            <i class="home icon"></i>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label>Beds</label>
+                        <div class="ui left icon input">
+                            <input type="number" name="start_date" placeholder="DD/MM/YYYY" required/>
+                            <i class="bed icon"></i>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label>Bathrooms</label>
+                        <div class="ui left icon input">
+                            <input type="number" name="start_date" placeholder="DD/MM/YYYY" required/>
+                            <i class="bath icon"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="field">
+                    <label>Amenities</label>
+                    <div class="ui checkbox">
+                        <input type="checkbox" name="example">
+                        <label>Make my profile visible</label>
+                    </div>
+                    <div class="ui checkbox">
+                        <input type="checkbox" name="example">
+                        <label>Make my profile visible</label>
+                    </div>
+                    <div class="ui checkbox">
+                        <input type="checkbox" name="example">
+                        <label>Make my profile visible</label>
+                    </div>
+                    <div class="ui checkbox">
+                        <input type="checkbox" name="example">
+                        <label>Make my profile visible</label>
+                    </div>
+                    <div class="ui checkbox">
+                        <input type="checkbox" name="example">
+                        <label>Make my profile visible</label>
+                    </div>
+                    <div class="ui checkbox">
+                        <input type="checkbox" name="example">
+                        <label>Make my profile visible</label>
+                    </div>
+                </div>
+                <div class="ui center aligned container" id="predit-button">
+                    <button type="submit" class="ui huge teal button"><i class="calculator icon"></i>Predict
+                    </button>
+                </div>
+            </form>
+        </div>
+        <div class="eight wide column">
+            <div id="seasonal-results" class="prediction-chart"></div>
+            <div id="distribution-results" class="prediction-chart"></div>
+        </div>
+    </div>
+</div>
+<script src="https://static.fusioncharts.com/code/latest/fusioncharts.js"></script>
+<script src="https://static.fusioncharts.com/code/latest/themes/fusioncharts.theme.candy.js"></script>
+<script type="text/javascript" src='{% static "js/predict.js" %}'></script>
+{% endblock %}
