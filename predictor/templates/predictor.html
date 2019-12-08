@@ -2,6 +2,13 @@
 {% block content %}
 {% load static %}
 <link rel="stylesheet" href="{% static "css/style.css" %}">
+<div class="ui container">
+    <div class="ui large secondary inverted pointing menu">
+        <a href="{% url 'home' %}" class="item">Home</a>
+        <a href="{% url 'map' %}" class="item">City reports</a>
+        <a href="{% url 'predictor' %}" class="active item">Price predictor</a>
+    </div>
+</div>
 <div class="ui text container">
     <div class="ui two column grid">
         <div class="eight wide column">
@@ -11,18 +18,18 @@
                     <label>Location</label>
                     <div class="two fields">
                         <div class="field">
-                            <select class="ui dropdown">
+                            <select class="ui dropdown" name="city">
                                 <option value="">City</option>
-                                <option value="0">NYC</option>
-                                <option value="1">London</option>
-                                <option value="2">Beijing</option>
-                                <option value="3">Paris</option>
-                                <option value="4">Tokyo</option>
+                                <option value="nyc">NYC</option>
+                                <option value="london">London</option>
+                                <option value="beijing">Beijing</option>
+                                <option value="paris">Paris</option>
+                                <option value="tokyo">Tokyo</option>
                             </select>
                         </div>
                         <div class="field">
                             <div class="ui left icon input">
-                                <input type="text" name="zip_code" placeholder="Zip code" required/>
+                                <input type="text" name="zip-code" placeholder="Zip code" required/>
                                 <i class="location arrow icon"></i>
                             </div>
                         </div>
@@ -31,24 +38,24 @@
                 <div class="three fields">
                     <div class="field">
                         <label>Property type</label>
-                        <select class="ui dropdown">
-                            <option value="">Gender</option>
+                        <select class="ui dropdown" name="property-type">
+                            <option value="">Property</option>
                             <option value="1">Male</option>
                             <option value="0">Female</option>
                         </select>
                     </div>
                     <div class="field">
                         <label>Room type</label>
-                        <select class="ui dropdown">
-                            <option value="">Gender</option>
+                        <select class="ui dropdown" name="room-type">
+                            <option value="">Room</option>
                             <option value="1">Male</option>
                             <option value="0">Female</option>
                         </select>
                     </div>
                     <div class="field">
                         <label>Bed type</label>
-                        <select class="ui dropdown">
-                            <option value="">Gender</option>
+                        <select class="ui dropdown" name="bed-type">
+                            <option value="">Bed</option>
                             <option value="1">Male</option>
                             <option value="0">Female</option>
                         </select>
@@ -58,28 +65,28 @@
                     <div class="field">
                         <label>Minimum Nights</label>
                         <div class="ui left icon input">
-                            <input type="number" name="start_date" placeholder="DD/MM/YYYY" required/>
+                            <input type="number" name="minimum-nights" placeholder="1" required/>
                             <i class="moon icon"></i>
                         </div>
                     </div>
                     <div class="field">
                         <label>Bedrooms</label>
                         <div class="ui left icon input">
-                            <input type="number" name="start_date" placeholder="DD/MM/YYYY" required/>
+                            <input type="number" name="bedroom-num" placeholder="1" required/>
                             <i class="home icon"></i>
                         </div>
                     </div>
                     <div class="field">
                         <label>Beds</label>
                         <div class="ui left icon input">
-                            <input type="number" name="start_date" placeholder="DD/MM/YYYY" required/>
+                            <input type="number" name="bed-num" placeholder="1" required/>
                             <i class="bed icon"></i>
                         </div>
                     </div>
                     <div class="field">
                         <label>Bathrooms</label>
                         <div class="ui left icon input">
-                            <input type="number" name="start_date" placeholder="DD/MM/YYYY" required/>
+                            <input type="number" name="bathroom-num" placeholder="1" required/>
                             <i class="bath icon"></i>
                         </div>
                     </div>
@@ -87,32 +94,33 @@
                 <div class="field">
                     <label>Amenities</label>
                     <div class="ui checkbox">
-                        <input type="checkbox" name="example">
-                        <label>Make my profile visible</label>
+                        <input type="checkbox" name="amen1">
+                        <label>Amenities1</label>
                     </div>
                     <div class="ui checkbox">
-                        <input type="checkbox" name="example">
-                        <label>Make my profile visible</label>
+                        <input type="checkbox" name="amen2">
+                        <label>Amenities2</label>
                     </div>
                     <div class="ui checkbox">
-                        <input type="checkbox" name="example">
-                        <label>Make my profile visible</label>
+                        <input type="checkbox" name="amem3">
+                        <label>Amenities3</label>
                     </div>
                     <div class="ui checkbox">
-                        <input type="checkbox" name="example">
-                        <label>Make my profile visible</label>
+                        <input type="checkbox" name="amem4">
+                        <label>Amenities4</label>
                     </div>
                     <div class="ui checkbox">
-                        <input type="checkbox" name="example">
-                        <label>Make my profile visible</label>
+                        <input type="checkbox" name="amem5">
+                        <label>Amenities5</label>
                     </div>
                     <div class="ui checkbox">
-                        <input type="checkbox" name="example">
-                        <label>Make my profile visible</label>
+                        <input type="checkbox" name="amem6">
+                        <label>Amenities6</label>
                     </div>
                 </div>
                 <div class="ui center aligned container" id="predit-button">
-                    <button type="submit" class="ui huge teal button"><i class="calculator icon"></i>Predict
+                    <button type="submit" class="ui huge teal button">
+                        <i class="calculator icon"></i>Predict
                     </button>
                 </div>
             </form>
@@ -123,7 +131,5 @@
         </div>
     </div>
 </div>
-<script src="https://static.fusioncharts.com/code/latest/fusioncharts.js"></script>
-<script src="https://static.fusioncharts.com/code/latest/themes/fusioncharts.theme.candy.js"></script>
 <script type="text/javascript" src='{% static "js/predict.js" %}'></script>
 {% endblock %}
