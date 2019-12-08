@@ -1,7 +1,7 @@
 const seasonalData = {
     chart: {
-        caption: "Seasonal prices of houses from 2019 to 2020",
-        yaxisname: "Prices of houses",
+        caption: "Seasonal Prices of Rooms from 2019 to 2020",
+        yaxisname: "Prices of rooms",
         xaxisname: "Date",
         forceaxislimits: "1",
         pixelsperpoint: "0",
@@ -27,39 +27,6 @@ FusionCharts.ready(function() {
         height: "290",
         dataFormat: "json",
         dataSource: seasonalData
-    }).render();
-});
-
-const availabilityData = {
-    chart: {
-        caption: "Room availability for 2019-2020",
-        lowerlimit: "0",
-        upperlimit: "100",
-        showvalue: "1",
-        numbersuffix: "%",
-        theme: "candy",
-        showtooltip: "0"
-    },
-    colorrange: {
-        color: [
-            {minvalue: "0", maxvalue: "50", code: "#F2726F"},
-            {minvalue: "50", maxvalue: "75", code: "#FFC533"},
-            {minvalue: "75", maxvalue: "100", code: "#62B58F"}
-        ]
-    },
-    dials: {
-        dial: [{ value: availability }]
-    }
-};
-
-FusionCharts.ready(function() {
-    var myChart = new FusionCharts({
-        type: "angulargauge",
-        renderAt: "availability-chart",
-        width: "22%",
-        height: "230",
-        dataFormat: "json",
-        dataSource: availabilityData
     }).render();
 });
 
@@ -96,17 +63,16 @@ FusionCharts.ready(function() {
 
 const priceData = {
     chart: {
-        caption: "Price data for different types",
-        subcaption: "2019-2020",
+        caption: "Price Data for Different Types",
         xaxisname: "Price range",
         yaxisname: "% Of all listings",
-        formatnumberscale: "1",
+        captionpadding: "2",
         plottooltext:
         "<b>$dataValue</b>% of the <b>$seriesName</b>s' prices are in $label",
         theme: "candy",
         drawcrossline: "1"
     },
-    categories: [{category: category.split("|").map(x=>({label:x}))}],
+    categories: [{category: priceCategory.split("|").map(x=>({label:x}))}],
     dataset: [
         {seriesname: "Entire room", data: entireList.split("|").map(x=>({value:x}))},
         {seriesname: "Private room", data: privateList.split("|").map(x=>({value:x}))},
@@ -117,11 +83,48 @@ const priceData = {
 
 FusionCharts.ready(function() {
     var myChart = new FusionCharts({
-        type: "mscolumn2d",
-        renderAt: "price-chart",
-        width: "44%",
-        height: "260",
+        type: "stackedcolumn2d",
+        renderAt: "price-range-chart",
+        width: "22%",
+        height: "230",
         dataFormat: "json",
         dataSource: priceData
     }).render();
 });
+
+
+const regionData = {
+    chart: {
+      showvalues: "0",
+      caption: "Neighbourhood Listings and Prices",
+      plottooltext: "Number of $seriesName listings in $label is <b>$dataValue</b>",
+      showhovereffect: "1",
+      yaxisname: "Number of listings",
+      theme: "candy"
+    },
+    categories: [{category: regionCategory.split("|").map(x=>({label:x}))}],
+    dataset: [
+      {seriesname: "Entire room", data: entireRegionList.split("|").map(x=>({value:x}))},
+      {seriesname: "Private room", data: privateRegionList.split("|").map(x=>({value:x}))},
+      {seriesname: "Hotel room", data: hotelRegionList.split("|").map(x=>({value:x}))},
+      {seriesname: "Shared room", data: shareRegionList.split("|").map(x=>({value:x}))},
+      {
+        seriesname: "Average price",
+        plottooltext: "The average price of $label is <b>$dataValue</b>",
+        renderas: "Line",
+        data: regionPrice.split("|").map(x=>({value:x}))
+      }
+    ]
+  };
+  
+  FusionCharts.ready(function() {
+    var myChart = new FusionCharts({
+      type: "stackedcolumn2dline",
+      renderAt: "region-price-chart",
+      width: "44%",
+      height: "260",
+      dataFormat: "json",
+      dataSource: regionData
+    }).render();
+  });
+  

@@ -26,12 +26,17 @@ def vis_nyc(request):
         "private": "45.17",
         "entire": "51.47",
         "shared": "2.46",
-        "category": "0-100|100-200|200-300|300-400",
+        "price_category": "0-100|100-200|200-300|300-400",
         "entire_list": "6.42|24.17|11.04|3.73",
         "private_list": "39.49|8.86|0.94|0.25",
         "hotel_list": "0.11|0.46|0.13|0.12",
         "share_list": "2.27|0.24|0.05|0.02",
-        "availability": "81",
+        "region_category": "r1|r2|r3|r4|r5|r6|r7|r8",
+        "entire_region_list": "77|22|11|24|15|15|34|46",
+        "private_region_list": "124|12|52|43|11|42|54|22",
+        "hotel_region_list": "7|12|12|2|1|6|45|3",
+        "share_region_list": "6|2|5|8|9|95|23|34",
+        "region_price": "12|24|35|12|92|93|123|144",
         "city": "nyc"
     }
 
@@ -57,12 +62,17 @@ def vis_london(request):
         "private": "42.23",
         "entire": "55.25",
         "shared": "0.74",
-        "category": "0-100|100-200|200-300|300-400",
+        "price_category": "0-100|100-200|200-300|300-400",
         "entire_list": "17.51|25.78|7.36|2.72",
         "private_list": "41.70|2.31|0.34|0.13",
         "hotel_list": "0.52|0.62|0.19|0.08",
         "share_list": "0.68|0.04|0.01|0.01",
-        "availability": "81",
+        "region_category": "r1|r2|r3|r4|r5|r6|r7|r8",
+        "entire_region_list": "77|22|11|24|15|15|34|46",
+        "private_region_list": "124|12|52|43|11|42|54|22",
+        "hotel_region_list": "7|12|12|2|1|6|45|3",
+        "share_region_list": "6|2|5|8|9|95|23|34",
+        "region_price": "12|24|35|12|92|93|123|144",
         "city": "london"
     }
 
@@ -88,12 +98,17 @@ def vis_beijing(request):
         "private": "45.17",
         "entire": "51.47",
         "shared": "2.46",
-        "category": "0-100|100-200|200-300|300-400",
+        "price_category": "0-100|100-200|200-300|300-400",
         "entire_list": "6.42|24.17|11.04|3.73",
         "private_list": "39.49|8.86|0.94|0.25",
         "hotel_list": "0.11|0.46|0.13|0.12",
         "share_list": "2.27|0.24|0.05|0.02",
-        "availability": "81",
+        "region_category": "r1|r2|r3|r4|r5|r6|r7|r8",
+        "entire_region_list": "77|22|11|24|15|15|34|46",
+        "private_region_list": "124|12|52|43|11|42|54|22",
+        "hotel_region_list": "7|12|12|2|1|6|45|3",
+        "share_region_list": "6|2|5|8|9|95|23|34",
+        "region_price": "12|24|35|12|92|93|123|144",
         "city": "beijing"
     }
 
@@ -119,12 +134,17 @@ def vis_paris(request):
         "private": "45.17",
         "entire": "51.47",
         "shared": "2.46",
-        "category": "0-100|100-200|200-300|300-400",
+        "price_category": "0-100|100-200|200-300|300-400",
         "entire_list": "6.42|24.17|11.04|3.73",
         "private_list": "39.49|8.86|0.94|0.25",
         "hotel_list": "0.11|0.46|0.13|0.12",
         "share_list": "2.27|0.24|0.05|0.02",
-        "availability": "81",
+        "region_category": "r1|r2|r3|r4|r5|r6|r7|r8",
+        "entire_region_list": "77|22|11|24|15|15|34|46",
+        "private_region_list": "124|12|52|43|11|42|54|22",
+        "hotel_region_list": "7|12|12|2|1|6|45|3",
+        "share_region_list": "6|2|5|8|9|95|23|34",
+        "region_price": "12|24|35|12|92|93|123|144",
         "city": "paris"
     }
 
@@ -150,12 +170,17 @@ def vis_tokyo(request):
         "private": "20.6",
         "entire": "64.7",
         "shared": "4.19",
-        "category": "0-10000|10000-20000|20000-30000|30000-40000",
+        "price_category": "0-10000|10000-20000|20000-30000|30000-40000",
         "entire_list": "18.32|30.12|9.52|2.61",
         "private_list": "15.47|6.25|1.23|0.31",
         "hotel_list": "7.09|3.49|0.58|0.05",
         "share_list": "4.70|0.26|0.01|0.0",
-        "availability": "81",
+        "region_category": "r1|r2|r3|r4|r5|r6|r7|r8",
+        "entire_region_list": "77|22|11|24|15|15|34|46",
+        "private_region_list": "124|12|52|43|11|42|54|22",
+        "hotel_region_list": "7|12|12|2|1|6|45|3",
+        "share_region_list": "6|2|5|8|9|95|23|34",
+        "region_price": "12|24|35|12|92|93|123|144",
         "city": "tokyo"
     }
 
