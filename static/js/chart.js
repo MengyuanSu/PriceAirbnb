@@ -1,6 +1,6 @@
 const seasonalData = {
     chart: {
-        caption: "Seasonal Prices of Rooms from 2019 to 2020",
+        caption: "Seasonal Room Prices from 2019 to 2020",
         yaxisname: "Prices of rooms",
         xaxisname: "Date",
         forceaxislimits: "1",
@@ -43,9 +43,9 @@ const distributionData = {
         theme: "candy"
     },
     data: [
-        {label: "Hotel room", value: hotel},
-        {label: "Private room", value: private},
         {label: "Entire home", value: entire},
+        {label: "Private room", value: private},
+        {label: "Hotel room", value: hotel},
         {label: "Shared room", value: share}
     ]
 };
@@ -100,6 +100,8 @@ const regionData = {
       plottooltext: "Number of $seriesName listings in $label is <b>$dataValue</b>",
       showhovereffect: "1",
       yaxisname: "Number of listings",
+      pYAxisMinValue: "0",
+      pYAxisMaxValue: maxCount,
       theme: "candy"
     },
     categories: [{category: regionCategory.split("|").map(x=>({label:x}))}],
@@ -110,16 +112,17 @@ const regionData = {
       {seriesname: "Shared room", data: shareRegionList.split("|").map(x=>({value:x}))},
       {
         seriesname: "Average price",
-        plottooltext: "The average price of $label is <b>$dataValue</b>",
+        plottooltext: `The average price of $label is <b>$dataValue</b>`,
         renderas: "Line",
-        data: regionPrice.split("|").map(x=>({value:x}))
+        parentYAxis: "S",
+        data: regionPrice.split("|").map(x=>({value: x}))
       }
     ]
   };
   
   FusionCharts.ready(function() {
     var myChart = new FusionCharts({
-      type: "stackedcolumn2dline",
+      type: "stackedcolumn2dlinedy",
       renderAt: "region-price-chart",
       width: "44%",
       height: "260",
@@ -127,4 +130,5 @@ const regionData = {
       dataSource: regionData
     }).render();
   });
+
   

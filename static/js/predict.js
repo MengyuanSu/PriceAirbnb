@@ -9,35 +9,31 @@ const seasonalPrediction = {
     },
     data: [
       {
-        label: "Venezuela",
+        label: "Monday",
         value: "290"
       },
       {
-        label: "Saudi",
+        label: "Tuesday",
         value: "260"
       },
       {
-        label: "Canada",
+        label: "Wednesday",
         value: "180"
       },
       {
-        label: "Iran",
+        label: "Thursday",
         value: "140"
       },
       {
-        label: "Russia",
+        label: "Friday",
         value: "115"
       },
       {
-        label: "UAE",
+        label: "Saturday",
         value: "100"
       },
       {
-        label: "US",
-        value: "30"
-      },
-      {
-        label: "China",
+        label: "Sunday",
         value: "30"
       }
     ]
@@ -55,7 +51,6 @@ FusionCharts.ready(function() {
 });
   
   
-
 const possibilityPrediction = {
     chart: {
       caption: "Yearly sales of iPhone",
