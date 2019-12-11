@@ -50,7 +50,6 @@
                     <div class="field">
                         <label>Bed type</label>
                         <select class="ui dropdown" name="bed-type" required>
-                            <option value="">Bed</option>
                             <option value="Airbed">Airbed</option>
                             <option value="Couch">Couch</option>
                             <option value="Futon">Futon</option>
@@ -153,6 +152,8 @@
     </div>
 </div>
 <script>
+    var min = `{{ min }}`;
+    var max = `{{ max }}`;
     var res = `{{ res }}`;
 </script>
 <script type="text/javascript" src='{% static "js/predict.js" %}'></script>

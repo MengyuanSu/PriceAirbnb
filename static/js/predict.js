@@ -43,6 +43,8 @@ const predictionData = {
     xaxisname: "Day",
     yaxisname: "Price",
     numberprefix: "$",
+    yAxisMinValue: min,
+    yAxisMaxValue: max,
     theme: "candy"
   },
   data: [
@@ -63,6 +65,7 @@ FusionCharts.ready(function() {
     width: "100%",
     height: "100%",
     dataFormat: "json",
+
     dataSource: predictionData
   }).render();
 });
