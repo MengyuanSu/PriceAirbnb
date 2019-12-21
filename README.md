@@ -2,12 +2,23 @@
 EECS6893 Big data project
 
 ## Data processing
-### visualization:
+### Data modeling
+* data_modeling
+* seasonality
+
+### Visualization:
 * preprocess_vis_data
 * csv2geojson: https://github.com/mapbox/csv2geojson
 * geojson-merge: https://github.com/mapbox/geojson-merge
 
 ## Tools and framework:
+### Modeling
+Linear Regression, Ridge Regression, Lasso Regression, Bayes Ridge Regression, Random Forest Regressor, XGBoost
+
+### Technologies Used
+Scikit learn, Pandas, Numpy, Jupyter Notebook, Matplotlib, Seaborn, Scipy
+
+### System
 * Spark: https://spark.apache.org/docs/latest/api/python/index.html
 * Django: https://www.djangoproject.com/
 * Leaflet.js: https://leafletjs.com/
